@@ -49,6 +49,23 @@ Military end users. Product needs to survive harsh environments, humid/outdoor c
 - Cruise RPM (15 m/s): 4500
 - Max RPM (sea level): 6000
 
+## Performance (estimated)
+- Hover power: 260W (65W/motor)
+- Max power: 1268W
+- T:W ratio: 3:1 (sea level)
+- Disc loading: 0.71 g/cm²
+- Hover flight time: ~64 min
+- With bonuses (reduced compute + fwd flight): ~67.5 min
+- Hover sensitivity: 2.4 sec/g saved
+- Motor KV: ~323, 8S pack
+
+## Battery
+- 8S pack, 3.6V nominal per cell, 9650 mAh per cell
+- Cell mass: 896g (8 × 112g)
+- Total pack mass: 1000g (cells + enclosure + BMS PCB + wiring)
+- Pack energy: 278 Wh
+- Gravimetric density: 1116 J/g (cells)
+
 ## BOM Summary
 - **Total AUW:** 2220g
 - **ISR cost:** $5,950
@@ -75,6 +92,8 @@ Military end users. Product needs to survive harsh environments, humid/outdoor c
 - [overview.md](overview.md) — this file
 - [arm-hinge.md](arm-hinge.md) — folding hinge design spec and decisions
 - [propulsion-vibration.md](propulsion-vibration.md) — vibration analysis and arm resonance
+- [vehicle_model.py](vehicle_model.py) — performance model (CLI, matches spreadsheet)
+- [vehicle_model_app.py](vehicle_model_app.py) — interactive Streamlit app (`streamlit run vehicle_model_app.py`)
 
 ## Open Items
 - Yellow part (frame boss) detailed design — not started (integral to frame)
