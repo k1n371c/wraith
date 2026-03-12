@@ -83,9 +83,10 @@ Military end users. Product needs to survive harsh environments, humid/outdoor c
 | Motor mounts | AZ31 magnesium | Weight savings, acceptable at non-wear interface |
 | Detent mechanism | Belleville preloaded V-ridges/grooves | High holding force for branch strikes + thrust moment resistance, M4 feel |
 | Detent wall angle | 45° | 4.2× SF at max thrust (front arm), good tactile feel |
+| Hinge support | Double-supported (bolted purple bracket) | Eliminates cantilever, 2mm bearing overlap each end, detents carry tilt |
 | Hard stop | None (intentional) | Breakaway = safety fuse on impact |
 | Front arm tube | 20mm OD × 1mm wall, standard wound | Adequate vibration margins, weight savings |
-| Rear arm tube | 20mm OD × 1mm wall, **pultruded** | Higher modulus needed — rear arms at 275mm resonate near cruise 1P with standard wound tubes |
+| Rear arm tube | 20mm OD × 1mm wall, standard wound (OTS) | Pultruded previously spec'd for vibration margin — reverted to OTS wound, resonance managed by FC notch filters (TBC) |
 | Belleville stack | 6 in series, 20mm OD, 330 lbf working | Travel budget for 1.5mm detent depth |
 
 ## File Index
@@ -98,10 +99,12 @@ Military end users. Product needs to survive harsh environments, humid/outdoor c
 ## Open Items
 - Yellow part (frame boss) detailed design — not started (integral to frame)
 - Fold angle — not specified
-- Shoulder screw spec — titanium, diameter TBD (currently 10mm)
-- Bearing overlap length — not dimensioned
+- ~~Shoulder screw spec~~ — **M3 titanium, two per coaxial side** (sized by Belleville preload tension)
+- ~~Bearing overlap length~~ — **2mm per end** (detents are primary tilt constraint)
 - Carbon tube clamp detail design
 - Flight controller platform — not discussed
 - ESC location (arm tip vs body) — not confirmed
 - Motor mount weight discrepancy — BOM says 10g, earlier discussion said 15g
-- Pultruded tube sourcing for rear arms
+- ~~Pultruded tube sourcing for rear arms~~ — reverted to OTS wound, FC notch filters (TBC)
+- Rear arm vibration management — f₁≈73 Hz on cruise 1P with wound tubes, needs FC notch filter confirmation
+- ~~Debris skirt~~ — rejected (machining access + seal incompatible with axial travel). Grease + maintenance approach instead.
