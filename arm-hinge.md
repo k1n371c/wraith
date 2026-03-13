@@ -21,24 +21,25 @@ Belleville washer preloaded detent hinge. Two positions: deployed + folded. Brea
 ### Sliding Interface
 Stainless shim washers at each end of the Belleville stack embed into the Belleville edges and rotate as a unit with the stack. The rotation interface is stainless-on-hard-anodized-7075 at whichever end (top green ledge or bottom purple bracket face) has less friction — both are flat-on-flat and acceptable wear pairs.
 
-## Load Path — Detent (Critical)
-**The detent resists thrust-induced folding moment.** Because the hinge axis is vertical and thrust is vertical, thrust creates a moment about the hinge axis that tries to fold/unfold the arm. The detent is the primary structural element resisting this.
+## Load Path — Detent (Abuse / Impact)
+**The detent resists lateral forces that try to rotate the arm about the vertical hinge axis.** Thrust is vertical and parallel to the hinge axis — it does not load the detent. Steady-state flight loads on the detent are negligible (motor reaction torque ≈ 0.12 N-m at hover).
+
+The detent is sized for **abuse loads**: branch strikes, broken prop imbalance, crash impacts, rough handling. It acts as a safety fuse — strong enough to hold through incidental contact, weak enough to break away on a real hit.
 
 | | Front | Rear |
 |---|---|---|
-| Motor Y distance from hinge axis | 209mm | 180mm |
-| Hover thrust moment (5N/motor) | 1.05 N-m | 0.90 N-m |
-| Max thrust moment (15N/motor) | 3.14 N-m | 2.70 N-m |
-| **Detent breakout torque (45° wall)** | **13.2 N-m** | **13.2 N-m** |
-| **Safety factor at max thrust** | **4.2×** | **4.9×** |
+| Arm length (hinge to motor) | 200mm | 275mm |
+| Belleville working load | 1,134 N (0.9mm) | 1,468 N (1.0mm) |
+| Breakout torque (45° wall) | 10.2 N-m | 13.2 N-m |
+| **Tip breakaway force** | **51N / 11.5 lbs** | **48N / 10.8 lbs** |
 
-Front arm is the critical case (wider spread for gimbal clearance → longer moment arm).
+Tip feel matched within ~6% across front and rear arms. ~50N / ~11 lbs at the tip — solid tactile detent without preventing breakaway on impact.
 
 ## Load Path — Bending
 - Thrust and arm weight create bending loads perpendicular to the hinge axis.
 - Small deflections absorbed by Belleville stack (off-axis compression).
-- **Detent ridges/grooves are the primary tilt constraint** — Belleville preload (1,468N) on 45° walls at ~9mm radius creates a strong restoring moment against any tilt.
-- **Centering: green part rides on yellow boss (top) and purple bracket (bottom).** Short cylindrical overlaps at each end, hard-anodized 7075 on hard-anodized 7075 — same proven wear pair as detent faces. Sliding fit accommodates both rotation and 1.5mm axial travel during fold action.
+- **Detent ridges/grooves are the primary tilt constraint** — Belleville preload (1,134-1,468N) on 45° walls at ~9mm radius creates a strong restoring moment against any tilt.
+- **Centering: green part rides on yellow boss (top) and purple bracket (bottom).** Short cylindrical overlaps at each end, hard-anodized 7075 on hard-anodized 7075 — same proven wear pair as detent faces. Sliding fit (~0.05-0.10mm radial clearance post-anodize) accommodates both rotation and 1.5mm axial travel during fold action.
 - Shoulder screw provides axial retention only (not centering) — green part bore has clearance around screw shaft in the middle. Detents provide tilt stiffness + fold resistance.
 
 ## Materials
@@ -50,42 +51,61 @@ Front arm is the critical case (wider spread for gimbal clearance → longer mom
 - Bellevilles: 17-7 PH stainless steel
 - Shoulder screw: **M3 titanium** (Ti-6Al-4V). Sized by Belleville preload in tension: 1,468N vs ~4,175N yield capacity (35% utilization). M2 rejected — 85% of yield, no margin. Two separate screws per coaxial side (not one long shared screw — avoids dead weight spanning gap between upper and lower hinge).
 - Bushings: none — centering overlaps are anodized 7075 on anodized 7075 (Type III anodize is alumina ceramic, provides galvanic isolation and wear resistance)
-- Carbon tube interface: fiberglass liner or G10 sleeve (galvanic isolation)
+- Carbon tube interface: direct to e-coated magnesium motor mount (e-coat provides galvanic isolation)
 
 ## Belleville Washers
+Front and rear arms use different Belleville thicknesses to equalize tip feel despite different arm lengths (200mm front vs 275mm rear). Force ratio 1,134/1,468 = 0.772 ≈ arm length ratio 200/275 = 0.727 — matched within 6%.
+
+### Rear Arms (1.0mm thick)
 - Part: McMaster 96475K247
-- Spec: 20mm OD, 10.2mm ID, 1mm thick, 1.55mm free height (h=0.55mm)
+- Spec: 20mm OD, 10.2mm ID, 1.0mm thick, 1.55mm free height (h=0.55mm)
 - Working load: 330 lbf / 1,468 N at 0.39mm deflection
 - Flat load: 441 lbf / 1,962 N at 0.55mm deflection
+
+### Front Arms (0.9mm thick)
+- Part: McMaster 96475K246 (TBC)
+- Spec: 20mm OD, 10.2mm ID, 0.9mm thick, 1.45mm free height (h=0.55mm)
+- Working load: 255 lbf / 1,134 N at 0.42mm deflection
+- Flat load: 318 lbf / 1,415 N at 0.55mm deflection
+
+### Common
 - Material: 17-7 PH stainless, DIN 2093
-- Stack: **6 in series** (alternating orientation)
-  - Force: 1,468 N (same as single washer)
-  - Total travel: 2.34mm
-  - Usable travel at 75% life: 1.75mm
-- QPV: 24 (6 per hinge × 4 hinges), BOM total 43.9g
+- Stack: **6 in series** (alternating orientation), force = single washer force
+- QPV: 24 (6 per hinge × 4 hinges)
 - Stainless shim washers at each end of stack (protect surfaces from Belleville edge loading, rotate with stack). Galvanic isolation between stainless and anodized 7075 provided by Type III anodize layer (alumina ceramic insulator).
+
+### Cavity Sizing
+Green inner lug is **common** across front and rear — cavity sized for the taller rear stack. Shim thickness differs to set correct preload.
+
+| | Front | Rear |
+|---|---|---|
+| Stack free height (6 washers) | 8.70mm | 9.30mm |
+| Shim washers (2×) | 2 × 0.80mm = 1.60mm | 2 × 0.50mm = 1.00mm |
+| Nominal stack height | 10.30mm | 10.30mm |
+| Initial compression | 0.60mm | 0.60mm |
+| Compressed cavity | **9.70mm** | **9.70mm** |
+
+Same cavity, same green part, same purple bracket. Shims are the only difference between front and rear.
 
 ## Detent Geometry
 - **2 positions** (deployed + folded), **2 detents per position** (180° apart, balanced — prevents tilting moment on shaft)
 - 4 grooves total in yellow part, 2 ridges on green part
-- Detent radius: ~9mm from shaft center
+- Detent radial span: R=7.5 to R=10.5mm from shaft center
 - Detent depth: 1.5mm
-- **Ridge profile (trapezoidal):** 1.5mm flat top, 45° walls each side, R0.75mm fillets at top edges (flat-to-wall transitions). Base width: 4.5mm (1.5 + 2×1.5). Trapezoidal chosen over pointed V — flat top distributes contact stress during sliding across plateaus between positions, prevents anodize gouging under full Belleville preload.
-- **Groove profile:** 2.0mm flat bottom, 45° walls, R0.5mm bottom fillets (endmill corner radius), R0.3mm top edge break. Top width: 5.0mm (2.0 + 2×1.5). Ridge does not bottom out in groove — clearance between ridge flat top and groove flat bottom when seated.
-- Wall angle: **45° from horizontal** (selected for mil use — provides 4.2× safety factor at max thrust on front arm)
+- **Ridge profile (trapezoidal):** At R=7.5mm: 2.0mm top flat, 4.8mm base. Widens with radius (radial taper). R0.75mm fillets at top edges (flat-to-wall transitions, prevents anodize cracking). Trapezoidal chosen over pointed V — flat top distributes contact stress during sliding across plateaus.
+- **Groove profile:** 1.0mm flat bottom, 45° walls, R0.5mm bottom fillets (endmill corner radius), R0.3mm top edge break. Ridge does not bottom out in groove — 1.0mm clearance between ridge and groove bottom when seated.
+- Wall angle: **45° from horizontal** (selected for mil use — ~50N tip breakaway, M4 charging handle feel)
 - Flat plateau between grooves: 3-4mm (provides steady resistance during fold action)
-- Radial feature extent: 4mm. Wider is better for contact stress distribution, but diminishing returns past ~4mm.
-- **Feature geometry: straight/planar walls** (not radial/pie-slice). All wall surfaces are flat planes at 45° — machinable in a single tool pass. Plan-view edges are parallel straight lines, not converging to center. Slight geometric deviation from true radial at 4mm extent on ~9mm radius is negligible.
-- Breakout torque at 45°: **13.2 N-m**
+- Radial feature extent: R=7.5 to R=10.5mm (3mm span).
+- **Groove/ridge slope faces are radial planes** (point at shaft center) — ensures ridge engages full wall simultaneously during rotation. Groove is slightly wider at OD than ID (natural taper from radial geometry).
 
-## Breakout Force at Arm Tip (200mm arm)
-| Wall angle | Tip force | Breakout torque | SF at max thrust (front) |
-|---|---|---|---|
-| 30° | 38N / 8.6 lbs | 7.6 N-m | 2.4× |
-| 45° | 66N / 14.9 lbs | 13.2 N-m | 4.2× |
-| 60° | 114N / 25.7 lbs | 22.9 N-m | 7.3× |
+## Breakout Force at Arm Tip
+| | Front (200mm, 1,134N) | Rear (275mm, 1,468N) |
+|---|---|---|
+| Tip force (45° wall) | 51N / 11.5 lbs | 48N / 10.8 lbs |
+| Breakout torque | 10.2 N-m | 13.2 N-m |
 
-45° selected: M4 charging handle feel + adequate margin for branch strikes.
+Tip feel matched within ~6%. 45° wall angle selected: M4 charging handle feel + breakaway on impact.
 
 ## Green Part Wall Thickness
 - **Centering overlap zones** (top and bottom, where green rides on yellow boss / purple bracket): top 2.0-2.5mm, bottom 1.1mm (purple bracket is thick/structural). Anodized 7075 on anodized 7075 sliding fit, ~0.05-0.10mm radial clearance post-anodize. Centering only — detents carry tilt loads.
@@ -110,14 +130,17 @@ Front arm is the critical case (wider spread for gimbal clearance → longer mom
 - Split clamp with bolts (not set screws — carbon can't take point loads)
 - Clamp gap on neutral/tension side of bending load, not compression side
 - Consider bonded + pinned (roll pin through lug and tube) for mil abuse resistance
+- **Speed holes:** CNC hex pattern cut after layup by carbon cutting vendor. Keep ligament width ≥ 1.5mm. No holes in clamp zones (within ~1.5× tube OD of clamp). Front arms: holes all around (ample EI margin). Rear arms: may need to limit hole pattern depending on final tube modulus vs EI margin.
 
 ## Weight — BOM Actuals (per hinge set, all 4 hinges)
 | Part | QPV | Unit weight | Total |
 |---|---|---|---|
-| Belleville springs | 24 | 1.83g | 43.9g |
+| Belleville springs (0.9mm, front) | 12 | ~1.65g | 19.8g |
+| Belleville springs (1.0mm, rear) | 12 | 1.83g | 22.0g |
 | Hinge screws | 4 | 2.73g | 10.9g |
 | Caps | 4 | 2.77g | 11.1g |
-| Shim washers | 8 | 0.50g | 4.0g |
+| Shim washers (0.80mm, front) | 4 | ~0.80g | 3.2g |
+| Shim washers (0.50mm, rear) | 4 | 0.50g | 2.0g |
 | Inner lugs (green parts) | 4 | 15.0g | 60.0g |
 | **Total hinge system** | | | **~130g** |
 
@@ -129,9 +152,10 @@ Front arm is the critical case (wider spread for gimbal clearance → longer mom
 - Magnesium (AZ31) considered for green/yellow parts — rejected due to galvanic corrosion complexity (carbon tube, steel Bellevilles, steel screw all bad couples with Mg), detent wear (Mg too soft), and need for steel ring inserts that added back complexity/weight. Weight savings was ~10-12g/hinge but not worth the corrosion management.
 - Steel detent ring inserts (17-4 PH) explored for Mg parts — hex OD press-fit into hex counterbore with Loctite 620. Ring insert preferred over individual pins (pins drag across Mg between positions). Rejected when decision moved to all-7075.
 - Magnesium coatings evaluated: e-coat (buries bead blast), PEO/Keronite (grey/white, hard to get black), Cerakote H-series (thin, black, tough, shows texture — best option for Mg). Moot after moving to 7075.
-- Ball detent approach considered — much simpler but produces 5-10× less holding force than Belleville approach. Insufficient for branch-strike resistance and thrust moment resistance.
+- Ball detent approach considered — much simpler but produces 5-10× less holding force than Belleville approach. Insufficient for branch-strike and abuse resistance.
 - Belleville count: 4 vs 6 analyzed. 4 washers give same force but only 1.17mm usable travel — too tight for 1.5mm detent depth. 6 washers chosen.
 - Green part wall thinning in Belleville guide zone: reduced from ~2mm to 1.0-1.2mm. Saved 4g/hinge. Overlap zone kept at 2.0-2.5mm for concentricity.
 - **PEEK bushings eliminated.** Centering moved from shoulder screw to green-on-yellow (top) and green-on-purple (bottom) cylindrical overlaps. All interfaces are anodized 7075 on anodized 7075 — Type III hard anodize (alumina ceramic) provides both galvanic isolation and wear resistance. Shoulder screw is axial retention only, green part bore has clearance around shaft.
-- **Trapezoidal ridge replaces pointed V-ridge.** 1.5mm flat top added. Pointed V (R0.75mm tip) concentrates full Belleville preload on a tiny contact patch while sliding across plateaus between detent positions — gouges anodize. Trapezoidal flat top distributes load face-to-face during transition. No effect on breakout torque (same wall angle, same preload).
-- **Straight/planar detent walls chosen over radial/pie-slice.** Radial (converging-to-center) walls create twisted ruled surfaces that can't be cut in a single tool pass. Straight walls are flat planes at 45° — one-pass machinable. At 4mm radial extent on ~9mm radius, the geometric deviation from true radial is negligible.
+- **Trapezoidal ridge replaces pointed V-ridge.** Flat top added. Pointed V concentrates full Belleville preload on a tiny contact patch while sliding across plateaus — gouges anodize. Trapezoidal flat top distributes load face-to-face during transition. No effect on breakout torque (same wall angle, same preload).
+- **Radial-plane detent walls** (slope faces point at shaft center) — ensures ridge engages full wall simultaneously during rotation. Corrected from earlier straight/planar approach which caused uneven engagement.
+- Split Belleville spec (0.9mm front, 1.0mm rear) to equalize arm tip feel across different arm lengths. Common green lug achieved by using different shim thicknesses (0.80mm front, 0.50mm rear) — same cavity depth, same purple bracket.

@@ -14,7 +14,7 @@
 | Arm length | 200mm | 275mm |
 | Motor Y (from hinge axis) | 209mm | 180mm |
 | Tube spec | 20mm OD × 1mm wall | 20mm OD × 1mm wall |
-| Tube type | Standard wound | **Pultruded** (higher modulus required) |
+| Tube type | Roll wrapped, E ≥ 70 GPa | Roll wrapped, **E ≥ 125 GPa** (higher modulus required) |
 
 Hinge axes are **vertical**, one per side, coaxial (front + rear arm share same hinge axis per side). Arms fold horizontally.
 Front arms spread wider than rear to clear gimbal payload.
@@ -62,16 +62,15 @@ Calculation: f₁ = 1/(2π) × √(3EI / (L³ × (M_tip + 0.24 × m_beam)))
 | Max throttle | 6000 | 100 | 300 | 1P: 1.01× — **on resonance, transient only** |
 
 ## Tube Selection Decision
-- **Front arms:** 20mm OD × 1mm wall, standard wound carbon. Adequate margins at all sustained conditions.
-- **Rear arms:** 20mm OD × 1mm wall, **pultruded carbon** (E ≈ 130 GPa). Required to avoid 1P resonance at cruise. Standard wound (E=70) puts f₁ at 73 Hz — directly on 1P at cruise (75 Hz). Pultruded not ideal at max throttle (1P ≈ f₁) but max throttle is transient.
+- **Front arms:** 20mm OD × 1mm wall, roll wrapped carbon, E ≥ 70 GPa. Standard wound layup is adequate — f₁ ≈ 118 Hz, well clear of cruise 1P (75 Hz).
+- **Rear arms:** 20mm OD × 1mm wall, roll wrapped carbon, **E ≥ 125 GPa** (high-modulus layup required). Standard wound (E=70) puts f₁ at 73 Hz — directly on 1P at cruise (75 Hz). Target E ≥ 125 GPa gives f₁ ≈ 97 Hz, 1.3× above cruise 1P. Exact layup/fiber TBD — needs supplier research.
 - Same 20mm OD for all arms keeps motor mounts and inner lugs identical.
-- Pultruded tradeoff: weaker in torsion/crush (all uni fiber), but bending-dominated application — acceptable. Split clamp distributes tube clamping loads.
+- FC notch filters do not solve arm resonance — they only mask it from the IMU. The arm still physically deflects at resonance, causing fatigue and payload vibration.
 
 ## Key Conclusions
 - 1P = shaft frequency (prop imbalance). 3P = blade pass frequency (primary excitation for 3-blade).
 - Front arm resonance sits safely between 1P and 3P at all sustained operating points.
-- Rear arms are the critical case due to 275mm length — **pultruded tubes mandatory.**
-- Custom higher-modulus wound layup not justified — pultruded is off-the-shelf and sufficient.
+- Rear arms are the critical case due to 275mm length — **high-modulus roll wrapped tubes required (E ≥ 125 GPa).**
 - Most drones in this class manage residual arm vibration via FC notch filters + soft mounting.
 
 ## Vibration Amplification Reference

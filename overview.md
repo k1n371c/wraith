@@ -50,7 +50,7 @@ Military end users. Product needs to survive harsh environments, humid/outdoor c
 - Max RPM (sea level): 6000
 
 ## Performance (estimated)
-- Hover power: 260W (65W/motor)
+- Hover power: 260W total (60W/motor electrical + 20W avionics)
 - Max power: 1268W
 - T:W ratio: 3:1 (sea level)
 - Disc loading: 0.71 g/cm²
@@ -81,13 +81,13 @@ Military end users. Product needs to survive harsh environments, humid/outdoor c
 | Hinge material | 7075-T6 aluminum | Best tradeoff of weight, wear, corrosion, cost, simplicity |
 | Finish (hinge/frame) | Type III hard anodize, black | Wear + color + corrosion in one process, shows bead blast |
 | Motor mounts | AZ31 magnesium | Weight savings, acceptable at non-wear interface |
-| Detent mechanism | Belleville preloaded V-ridges/grooves | High holding force for branch strikes + thrust moment resistance, M4 feel |
-| Detent wall angle | 45° | 4.2× SF at max thrust (front arm), good tactile feel |
+| Detent mechanism | Belleville preloaded V-ridges/grooves | ~50N tip breakaway for branch strikes + abuse, M4 feel |
+| Detent wall angle | 45° | ~11 lbs tip breakaway — holds incidental contact, breaks away on impact |
 | Hinge support | Double-supported (bolted purple bracket) | Eliminates cantilever, 2mm bearing overlap each end, detents carry tilt |
 | Hard stop | None (intentional) | Breakaway = safety fuse on impact |
-| Front arm tube | 20mm OD × 1mm wall, standard wound | Adequate vibration margins, weight savings |
-| Rear arm tube | 20mm OD × 1mm wall, standard wound (OTS) | Pultruded previously spec'd for vibration margin — reverted to OTS wound, resonance managed by FC notch filters (TBC) |
-| Belleville stack | 6 in series, 20mm OD, 330 lbf working | Travel budget for 1.5mm detent depth |
+| Front arm tube | 20mm OD × 1mm wall, roll wrapped, E ≥ 70 GPa | Adequate vibration margins with standard wound layup |
+| Rear arm tube | 20mm OD × 1mm wall, roll wrapped, **E ≥ 125 GPa** | High-modulus layup required — standard wound (70 GPa) resonates on cruise 1P. Exact layup TBD. |
+| Belleville stack | 6 in series, 20mm OD, split spec | 0.9mm front (255 lbf) / 1.0mm rear (330 lbf) — equalizes tip feel across arm lengths |
 
 ## File Index
 - [overview.md](overview.md) — this file
